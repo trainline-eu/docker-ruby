@@ -45,7 +45,7 @@ RUN set -ex \
 	&& mv file.c.new file.c \
 	\
 	&& autoconf \
-	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" \
+	&& gnuArch="$(dpkg-architecture -qDEB_BUILD_GNU_TYPE)" \
 	&& ./configure \
 		--build="$gnuArch" \
 		--disable-install-doc \
