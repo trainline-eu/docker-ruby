@@ -24,8 +24,12 @@ RUN set -ex \
 		tzdata \
 		pkg-config \
 	' \
+	&& commonDeps=' \
+		tzdata \
+		pkg-config \
+	' \
 	&& apt-get update \
-	&& apt-get install -y --no-install-recommends $buildDeps \
+	&& apt-get install -y --no-install-recommends $buildDeps $commonDeps \
 	&& rm -rf /var/lib/apt/lists/* \
 	\
 	&& wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz" \
