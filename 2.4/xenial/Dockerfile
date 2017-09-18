@@ -21,6 +21,8 @@ RUN set -ex \
 		dpkg-dev \
 		libgdbm-dev \
 		ruby \
+		tzdata \
+		pkg-config \
 	' \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends $buildDeps \
